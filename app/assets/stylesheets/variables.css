@@ -1,0 +1,11 @@
+:root {
+  --main-blue: #3297d3;
+  --light-grey: #828282;
+  --lighter-grey: #949494;
+
+  --font-lato: "Lato", -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif ;
+  --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif ;
+  --font-nunito: "Nunito", -apple-system, BlinkMacSystemFont, Roboto,Helvetica Neue, sans-serif ;
+
+  --navbar-height: 80px;
+}
