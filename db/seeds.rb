@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Destroying everything...'
+User.destroy_all
+Dish.destroy_all
+Restaurant.destroy_all
+
 puts 'Creating Users...'
 
 jordan = User.create!(email: 'jordasg@gmail.com', password: '123456')
@@ -28,3 +33,11 @@ mc_donalds = Restaurant.create!(
   positive_reviews: 56,
   total_reviews: 120
 )
+
+puts 'Creating Dishes...'
+
+dish1 = Dish.create!(name:'Big Tasty', restaurant: mc_donalds, price: '1200')
+dish2 = Dish.create!(name:'Big Mac', restaurant: mc_donalds, price: '2200')
+
+dish3 = Dish.create(name: 'Capuccino', restaurant: gloria_jeans, price: '900')
+dish4 = Dish.create(name: 'Espresso', restaurant: gloria_jeans, price: '600')

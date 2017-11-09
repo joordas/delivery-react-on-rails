@@ -1,10 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 
-import HomepageBanner from "./components/HomepageBanner";
+import Homepage from "./components/Homepage";
 
-const homepageBanner = document.getElementById("homepage-banner");
+const homepage = document.getElementById("homepage");
 
-if (homepageBanner) {
-  render(<HomepageBanner />, homepageBanner);
+if (homepage) {
+  const allRestaurants = JSON.parse(homepage.dataset.restaurants);
+  render(<Homepage restaurants={allRestaurants} />, homepage);
 }

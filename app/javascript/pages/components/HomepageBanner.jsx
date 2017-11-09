@@ -4,17 +4,21 @@ import { styles } from "../../style-variables";
 
 const Wrapper = styled.div`
   padding-top: 50px;
-  opacity: .99;
   overflow-x: hidden;
   background-image: url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?dpr=1&auto=format&fit=crop&w=1950&h=&q=60&cs=tinysrgb&crop=");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  position: static;
-  z-index: -10;
-  min-height: calc(100vh);
+  min-height: calc(90vh);
+  z-index: -6;
+  opacity: 0.99;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
   &::after {
-    opacity: .99;
     overflow-x: hidden;
     content: "";
     display: block;
@@ -25,7 +29,7 @@ const Wrapper = styled.div`
     width: 2500px;
     height: 2500px;
     transform: rotate(45deg);
-    z-index: -6;
+    z-index: -3;
   }
   &::before {
     content: "";
@@ -37,16 +41,8 @@ const Wrapper = styled.div`
     width: 2500px;
     height: 2500px;
     transform: rotate(45deg);
-    z-index: -9;
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-    z-index: -5;
-`;
-
-const ContentWrapper = styled.div`
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  padding-left: 20px;
+    z-index: -2;
 `;
 
 const Header = styled.h1`
@@ -101,6 +97,10 @@ const SearchBar = styled.input`
   // text-align: center;
   &:focus {
     outline: none;
+  }
+  &::placeholder {
+    color: ${styles.colors.lightGrey};
+    letter-spacing: 3px;
   }
 `;
 

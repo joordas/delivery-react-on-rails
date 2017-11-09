@@ -8,5 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log("Hello World from Webpacker");
-import "../restaurants/index";
-import "../pages/index";
+import App from "../App";
+import navbarHelper from "../helpers/navbar";
