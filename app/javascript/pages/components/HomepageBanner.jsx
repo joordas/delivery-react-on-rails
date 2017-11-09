@@ -90,6 +90,8 @@ const SearchBarWrapper = styled.div`
 
 const SearchBar = styled.input`
   font-family: ${styles.fonts.montserrat};
+  color: ${styles.colors.grey};
+  text-align: center;
   max-width: 1100px;
   flex: 1;
   border: none;
