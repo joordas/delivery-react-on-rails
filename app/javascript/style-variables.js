@@ -4,7 +4,8 @@ export const styles = {
     grey: "#4f4f4f",
     lightGrey: "#828282",
     lighterGrey: "#949494",
-    brightGreen: "#c6ff00"
+    brightGreen: "#c6ff00",
+    oceanBlue: "#2bc0e4"
   },
   fonts: {
     lato:

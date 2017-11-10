@@ -7,7 +7,9 @@ import RestaurantListItem from "./RestaurantListItem";
 const RestaurantGrid = styled.div`
   background-color: white;
   color: white;
-  // code css grid HERE!
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 18px;
 `;
 
 class RestaurantList extends Component {
@@ -33,7 +35,6 @@ class RestaurantList extends Component {
         {this.state.restaurantList.map(restaurant => (
           <RestaurantListItem key={restaurant.slug} restaurant={restaurant} />
         ))}
-        <Link to="/restaurants"> hey </Link>
       </RestaurantGrid>
     );
   }

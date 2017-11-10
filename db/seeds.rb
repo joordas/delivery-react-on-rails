@@ -33,6 +33,21 @@ mc_donalds = Restaurant.create!(
   positive_reviews: 56,
   total_reviews: 120
 )
+artist = Restaurant.create!(
+  name: 'the ARTIST Restaurant',
+  address: 'Gara de Nord, Piața Gării de Nord, București ',
+  phone_number: '021 300 0188',
+  positive_reviews: 56,
+  total_reviews: 120
+)
+
+sharkia = Restaurant.create!(
+  name: 'Sharkia Restaurant ',
+  address: ' Strada Luterană 2-4, București 010162 ',
+  phone_number: '0728 318 871',
+  positive_reviews: 10,
+  total_reviews: 40
+)
 
 puts 'Creating Dishes...'
 
