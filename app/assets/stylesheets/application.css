@@ -14,10 +14,13 @@
  *= require_self
  */
 
- body {
+ body, html, .wrapper {
    overflow-x: hidden;
  }
-
+.wrapper {
+  position: relative;
+  overflow-y: hidden;
+}
  a {
    text-decoration: none;
  }

@@ -11,10 +11,12 @@
 </head>
 
 <body>
-  <!-- <%= render  "shared/navbar" %> -->
-  <%= yield %>
-    <%= javascript_pack_tag 'application' %>
-      <%= yield :after_everything %>
+  <div class="wrapper">
+    <%= yield %>
+      <%= javascript_pack_tag 'application' %>
+        <%= yield :after_everything %>
+  </div>
+
 </body>
 
 </html>
