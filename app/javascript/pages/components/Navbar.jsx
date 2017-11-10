@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { styles } from "../../style-variables";
@@ -79,12 +79,31 @@ const NavbarLinks = props => {
   );
 };
 
-const Navbar = props => (
-  <Wrapper className="navbar">
-    <Logo to="/">Cayliv</Logo>
-    <NavbarLinks user={props.user} />
-  </Wrapper>
-);
+class Navbar extends Component {
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  handleScroll() {
+    const navBar = document.querySelector(".navbar");
+    const scroll = window.scrollY;
+    if (scroll > 0) {
+      navBar.classList.add("fixed");
+    } else if (scroll === 0) {
+      navBar.classList.remove("fixed");
+    }
+  }
+  render() {
+    return (
+      <Wrapper className="navbar">
+        <Logo to="/">Cayliv</Logo>
+        <NavbarLinks user={this.props.user} />
+      </Wrapper>
+    );
+  }
+}
 
 // Navbar.defaultProps = {
 //   user: {

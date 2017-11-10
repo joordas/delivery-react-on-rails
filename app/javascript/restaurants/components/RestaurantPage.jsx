@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class RestaurantPage extends Component {
   state = {
-    restaurant: {}
+    restaurant: {
+      name: "",
+      address: "",
+      dishes: []
+    }
   };
 
   fetchRestaurant = () => {
@@ -17,21 +22,25 @@ class RestaurantPage extends Component {
       });
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchRestaurant();
   }
 
   render() {
-    const { name, address } = this.state.restaurant;
-    const dishes = this.state.restaurant.dishes;
+    const { name, address, dishes } = this.state.restaurant;
 
     return (
       <div>
         <h1>hello from Restaurant Page!!</h1>
         <p>{name}</p>
         <p>{address}</p>
-        {console.log(dishes)}
-        {dishes.map(dish => <p>dish.name</p>)}
+        {dishes.map(dish => (
+          <div key={dish.id}>
+            <p>{dish.name}</p>
+            <p> {dish.price} </p>
+            <p />
+          </div>
+        ))}
       </div>
     );
   }

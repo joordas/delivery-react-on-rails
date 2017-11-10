@@ -9,4 +9,3 @@
 
 console.log("Hello World from Webpacker");
 import App from "../App";
-import navbarHelper from "../helpers/navbar";
