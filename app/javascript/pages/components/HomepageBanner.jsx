@@ -32,6 +32,7 @@ const ContentWrapper = styled.div`
     z-index: -3;
   }
   &::before {
+    overflow-x: hidden;
     content: "";
     display: block;
     position: absolute;
@@ -54,6 +55,7 @@ const Header = styled.h1`
   line-height: 1.5;
   letter-spacing: 4px;
   margin-bottom: 0;
+  text-shadow: 0 0 13px rgba(255, 255, 255, 0.23);
 `;
 
 const Subheader = styled.h3`

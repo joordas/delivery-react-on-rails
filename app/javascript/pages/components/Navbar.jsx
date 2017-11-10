@@ -37,6 +37,7 @@ const Nav = styled.ul`
 const NavbarLink = styled.li`
   color: ${styles.colors.lightGrey};
   font-family: ${styles.fonts.lato};
+  font-size: 1.125rem;
   padding: 0 1.375rem;
 `;
 
@@ -75,13 +76,22 @@ const NavbarLinks = props => {
       <a href="/users/sign_in">
         <NavbarLink>Login</NavbarLink>
       </a>
+      <a data-method="delete" href="/users/sign_out">
+        <NavbarLink>Sign Out</NavbarLink>
+      </a>
     </Nav>
   );
 };
 
 class Navbar extends Component {
   componentDidMount() {
+    const { id } = JSON.parse(document.getElementById("app").dataset.userid);
+
     window.addEventListener("scroll", this.handleScroll);
+    if (id) {
+      const user = fetch(`/api/users/${id}`);
+      console.log(user); //finish later : I think it doesnt let me get the user from the API cause of authentication issues.
+    }
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
