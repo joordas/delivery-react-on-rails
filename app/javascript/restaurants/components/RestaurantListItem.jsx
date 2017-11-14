@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { styles } from "../../style-variables";
-import { numberToColorHsl } from "../../helpers/helpers";
+import RatingWithPrice from "./RatingWithPrice";
 
 const RestaurantGridItem = styled.div`
   background-color: #fefefe;
@@ -43,12 +43,6 @@ const BackgroundImage = styled.a`
   max-height: 300px;
 `;
 
-const Ratings = styled.span`
-  color: green;
-  font-weight: 700;
-  font-family: ${styles.fonts.lato};
-`;
-
 class RestaurantListItem extends Component {
   render() {
     const {
@@ -60,7 +54,7 @@ class RestaurantListItem extends Component {
       total_reviews,
       positive_reviews
     } = this.props.restaurant;
-    const rating = Math.floor(positive_reviews / total_reviews * 100);
+    const priceRating = "££"; // should come from API call
     return (
       <RestaurantGridItem to={`restaurants/${slug}`}>
         <BackgroundImage
@@ -70,9 +64,11 @@ class RestaurantListItem extends Component {
         <CardInfo>
           <Name to={`restaurants/${slug}`}>{name}</Name>
           <Address>{address}</Address>
-          <Ratings style={{ color: numberToColorHsl(rating) }}>
-            {rating}%
-          </Ratings>
+          <RatingWithPrice
+            positiveReviews={positive_reviews}
+            totalReviews={total_reviews}
+            priceRating={priceRating}
+          />
         </CardInfo>
       </RestaurantGridItem>
     );

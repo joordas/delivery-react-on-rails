@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import Navbar from "../../pages/components/Navbar";
-import BackButton from "../../pages/components/BackButton";
+import RestaurantMenu from "./RestaurantMenu";
+
+const Wrapper = styled.div`padding: 50px 100px;`;
 
 class RestaurantPage extends Component {
   state = {
@@ -10,7 +13,8 @@ class RestaurantPage extends Component {
       name: "",
       address: "",
       dishes: []
-    }
+    },
+    imageUrl: "https://picsum.photos/1440/300"
   };
 
   fetchRestaurant = () => {
@@ -35,7 +39,11 @@ class RestaurantPage extends Component {
     return (
       <div>
         <Navbar />
-        <BackButton />
+        <RestaurantMenu
+          imageUrl={this.state.imageUrl}
+          restaurant={this.state.restaurant}
+        />
+        {/* the imageUrl props should come from the restaurant API call */}
       </div>
     );
   }
