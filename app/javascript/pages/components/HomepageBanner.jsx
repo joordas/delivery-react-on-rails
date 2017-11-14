@@ -29,6 +29,7 @@ const ContentWrapper = styled.div`
     width: 2500px;
     height: 2500px;
     transform: rotate(45deg);
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.09);
     z-index: -3;
   }
   &::before {

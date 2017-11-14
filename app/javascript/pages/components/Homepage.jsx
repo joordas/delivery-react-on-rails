@@ -23,7 +23,7 @@ class Homepage extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar whitelogo="true" />
         <HomepageBanner />
         <RoundedPanel>
           <RestaurantList restaurants={this.props.restaurants} />

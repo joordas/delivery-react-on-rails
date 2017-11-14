@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
   z-index: 100;
   flex: 1;
   background-color: white;
@@ -17,7 +16,7 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled(Link)`
-  color: ${styles.colors.mainBlue};
+  color: ${props => (props.whitelogo ? "white" : styles.colors.mainBlue)};
   margin: 0;
   font-family: ${styles.fonts.lato};
   font-size: 1.625rem;
@@ -108,7 +107,9 @@ class Navbar extends Component {
   render() {
     return (
       <Wrapper className="navbar">
-        <Logo to="/">Cayliv</Logo>
+        <Logo whitelogo={this.props.whitelogo} to="/">
+          Cayliv
+        </Logo>
         <NavbarLinks user={this.props.user} />
       </Wrapper>
     );

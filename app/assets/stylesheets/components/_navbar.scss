@@ -1,15 +1,15 @@
 .navbar {
-  height: 40px;
-  padding: 1.25rem 1.875rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  background-color: white;
-  position:fixed;
-  width: calc(100vw - 2*(1.875rem));
-  transition-duration: .2s;
-  flex:1;
+  // height: 40px;
+  // padding: 1.25rem 1.875rem;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // z-index: 100;
+  // background-color: white;
+  // // position:fixed;
+  // width: calc(100vw - 2*(1.875rem));
+  // transition-duration: .2s;
+  // flex:1;
   &.fixed {
     box-shadow: 0 0 6px 1px rgba(0,0,0, .12);
     padding: .275rem 1.875rem;

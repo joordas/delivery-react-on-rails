@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Navbar from "../../pages/components/Navbar";
+import BackButton from "../../pages/components/BackButton";
 
 class RestaurantPage extends Component {
   state = {
@@ -34,16 +35,7 @@ class RestaurantPage extends Component {
     return (
       <div>
         <Navbar />
-        <h1>hello from Restaurant Page!!</h1>
-        <p>{name}</p>
-        <p>{address}</p>
-        {dishes.map(dish => (
-          <div key={dish.id}>
-            <p>{dish.name}</p>
-            <p> {dish.price} </p>
-            <p />
-          </div>
-        ))}
+        <BackButton />
       </div>
     );
   }
